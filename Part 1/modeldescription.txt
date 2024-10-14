@@ -1,0 +1,18 @@
+Input: 3 x 32 x 32 (CIFAR-10 image)
+
+Layer 1: Conv2D(3 → 16, 3x3, padding=1) + ReLU + MaxPool2D(2x2)
+         Output: 16 x 16 x 16
+
+Layer 2: Conv2D(16 → 32, 3x3, padding=1) + ReLU + MaxPool2D(2x2)
+         Output: 32 x 8 x 8
+
+Layer 3: Conv2D(32 → 64, 3x3, padding=1) + ReLU + MaxPool2D(2x2)
+         Output: 64 x 4 x 4
+
+Flatten: Output → (batch_size, 1024)
+
+Layer 4: Linear(1024 → 500) + ReLU + Dropout(0.25)
+
+Layer 5: Linear(500 → 10)
+
+Output: 10 class scores (CIFAR-10)
