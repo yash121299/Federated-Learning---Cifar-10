@@ -9,6 +9,9 @@ aggregate_file_path = 'poisoned_aggregate_metric_list.pkl'
 with open(aggregate_file_path, 'rb') as file:
     loaded_aggregate_file = pickle.load(file)
 
+print(type(loaded_aggregate_file))
+print(loaded_aggregate_file[0])
+print(len(loaded_aggregate_file))
 
 accuracy_list = []
 loss_list = []
@@ -22,19 +25,19 @@ for i in range(len(loaded_aggregate_file)):
         loss_list.append(val_loss)
     rounds.append(i+1)
 
-
-plt.plot(rounds, accuracy_list)
-plt.xlabel('Rounds')
-plt.ylabel('Accuracy')
-plt.title('Poisoned_Average_Evaluation_Accuracy_Among_Clients')
-plt.grid(True)
-plt.savefig('Poisoned_Average_Evaluation_Accuracy_Among_Clients.png')
-plt.show()
-
-plt.plot(rounds, loss_list)
-plt.xlabel('Rounds')
-plt.ylabel('Loss')
-plt.title('Poisoned_Average_Evaluation_Loss_Among_Clients')
-plt.grid(True)
-plt.savefig('Poisoned_Average_Evaluation_Loss_Among_Clients.png')
-plt.show()
+#
+# plt.plot(rounds, accuracy_list)
+# plt.xlabel('Rounds')
+# plt.ylabel('Accuracy')
+# plt.title('Poisoned_Average_Evaluation_Accuracy_Among_Clients')
+# plt.grid(True)
+# plt.savefig('Poisoned_Average_Evaluation_Accuracy_Among_Clients.png')
+# plt.show()
+#
+# plt.plot(rounds, loss_list)
+# plt.xlabel('Rounds')
+# plt.ylabel('Loss')
+# plt.title('Poisoned_Average_Evaluation_Loss_Among_Clients')
+# plt.grid(True)
+# plt.savefig('Poisoned_Average_Evaluation_Loss_Among_Clients.png')
+# plt.show()
